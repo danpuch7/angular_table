@@ -17,6 +17,10 @@ export class ModalComponent implements OnInit {
   }
   RegGroup!:FormGroup
   submitDis:boolean=true
+
+  secValidator:boolean=false
+  firstValidator:boolean=false
+  midValidator:boolean=false
   ngOnInit(): void {
     this.RegGroup=this.fb.group({
       aFirstName:['',[Validators.required,]],
@@ -60,6 +64,34 @@ export class ModalComponent implements OnInit {
     else {
       this.submitDis=true
     }
+  }
+
+  IsValidTrue()
+  {
+    if(!this.RegGroup.controls['aFirstName'].valid)
+    {
+      this.firstValidator= true
+    }
+    else {
+      this.firstValidator= false
+    }
+
+    if(!this.RegGroup.controls['aLastName'].valid)
+    {
+      this.secValidator= true
+    }
+    else {
+      this.secValidator= false
+    }
+
+    if(!this.RegGroup.controls['aMiddleName'].valid)
+    {
+      this.midValidator= true
+    }
+    else {
+      this.midValidator= false
+    }
+
   }
 
 

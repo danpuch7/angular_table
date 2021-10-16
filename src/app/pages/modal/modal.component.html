@@ -11,13 +11,15 @@
             <div class="col">
               <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="FirstName">FirstName</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="FirstName" formControlName="aFirstName">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="FirstName" formControlName="aFirstName" (change)="IsValidTrue()">
+                <small class="text-danger" *ngIf="firstValidator">This field is required!</small>
               </div>
             </div>
             <div class="col">
               <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-m">LastName</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="aLastName">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="aLastName" (change)="IsValidTrue()">
+                <small class="text-danger" *ngIf="secValidator">This field is required!</small>
               </div>
             </div>
           </div>
@@ -26,7 +28,8 @@
             <div class="col">
               <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-sm">MiddleName</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="aMiddleName">
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" formControlName="aMiddleName" (change)="IsValidTrue()">
+                <small class="text-danger" *ngIf="midValidator">This field is required!</small>
               </div>
             </div>
           </div>
