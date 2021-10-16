@@ -1,9 +1,9 @@
 import {CarEntity} from "./car-entity";
 
 export interface OwnerEntity {
-  aId:number,
+  id:any,
   aLastName: string,
   aFirstName: string,
   aMiddleName: string,
-  aCars: CarEntity[]
+  aCars: Array<CarEntity>
 }

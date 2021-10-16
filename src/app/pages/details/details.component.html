@@ -1,1 +1,82 @@
-<p>details works!</p>
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable show" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Details of User</h5>
+      </div>
+      <form>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col">
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="FirstName">FirstName</span>
+                <p>{{User.aFirstName}}</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-m">LastName</span>
+                <p>{{User.aLastName}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">MiddleName</span>
+                <p>{{User.aMiddleName}}</p>
+              </div>
+            </div>
+          </div>
+
+          <h5>Your Cars:</h5>
+
+          <ng-container >
+
+            <ng-container *ngFor="let car of User.aCars">
+
+
+                <div class="row">
+                  <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                      <span class="input-group-text" id="inputGroup-sizin-sm">Name</span>
+                      <p>{{car.name}}</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                      <span class="input-group-text" id="inputGoup-sizing-sm">Model</span>
+                      <p>{{car.model}}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                      <span class="input-group-text" id="iputGroup-sizin-sm">Year</span>
+                     <span class="">{{car.year}}</span>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="input-group input-group-sm mb-3">
+                      <span class="input-group-text" id="inpuGoup-sizing-sm">Registration Number</span>
+                      <p>{{car.regNum}}</p>
+                    </div>
+                  </div>
+                </div>
+            </ng-container>
+
+          </ng-container>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal" routerLink="/" >Close</button>
+          <button class="btn-warning btn-sm" (click)="goToPath(User.id)">Изменить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -9,15 +9,12 @@ import { OwnerEntity } from '../interfaces/owner-entity';
 
 export class InMemHeroService implements InMemoryDbService {
   createDb() {
-    let owners = [
-      { id: 1, name: 'Windstorm',model:"asdadasd" },
-      { id: 1, name: 'Windstorm',model:"asdadasd" },
-    ];
+    let owners:Array<OwnerEntity> = [];
     return {owners};
   }
 
   genId(owners: OwnerEntity[]): number {
-    return owners.length > 0 ? Math.max(...owners.map(hero => hero.aId)) + 1 : 11;
+    return owners.length > 0 ? Math.max(...owners.map(hero => hero.id)) + 1 : 11;
   }
 
 }

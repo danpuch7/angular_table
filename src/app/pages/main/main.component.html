@@ -1,8 +1,8 @@
 <h3>Владельцы автомобилей:</h3>
 
-<button class="btn btn-primary mb-4" (click)="setOwner()">Добавить</button>
+<button class="btn btn-primary mb-4" (click)="showMdBtn()">Добавить</button>
 
-<table class="table">
+<table class="table" *ngIf="ownersArr">
   <thead class="thead-dark">
   <tr>
     <th scope="col">Фамилия</th>
@@ -13,17 +13,21 @@
   </tr>
   </thead>
   <tbody>
+  <ng-container *ngFor="let user of ownersArr;let i =index">
   <tr>
-    <td>Markadsadas</td>
-    <td>Otto</td>
-    <td>@mdo</td>
-    <td>2</td>
+    <td>{{user.aLastName}}</td>
+    <td>{{user.aFirstName}}</td>
+    <td>{{user.aMiddleName}}</td>
+    <td>{{user.aCars.length}}</td>
     <td class="row justify-content-around">
-      <button class="btn-outline-danger btn-sm">Удалить</button>
-      <button class="btn-outline-warning btn-sm">Изменить</button>
-      <button class="btn-outline-info btn-sm">Посмотреть</button>
+      <button class="btn-outline-danger btn-sm" (click)="deleteOwner(user.id)">Удалить</button>
+      <button class="btn-outline-info btn-sm" [routerLink]="['details',user.id]">Посмотреть</button>
     </td>
 
   </tr>
+  </ng-container>
   </tbody>
 </table>
+
+<app-modal *ngIf="showMd"></app-modal>
+
